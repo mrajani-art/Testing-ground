@@ -1,0 +1,42 @@
+# ── Secrets (NEVER commit these) ──────────────────────────────────
+.streamlit/secrets.toml
+.env
+config/google_service_account.json
+
+# ── Python ────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+env/
+.venv/
+
+# ── Jupyter / Colab ───────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Data files (keep out of repo, live in Supabase/Drive) ─────────
+data/
+*.csv
+*.xlsx
+*.pdf
+
+# ── OS junk ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+
+# ── Models are committed (they're small .joblib files) ────────────
+# models/*.joblib  ← do NOT ignore these, we want them in the repo
