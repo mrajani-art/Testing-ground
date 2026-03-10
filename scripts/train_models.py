@@ -48,7 +48,7 @@ logger = logging.getLogger(__name__)
 
 # ── Supabase credentials (set as env vars or paste directly for local use) ───
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://dernxirzvawjmdxzxefl.supabase.co")
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")   # set SUPABASE_KEY env var
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlcm54aXJ6dmF3am1keHp4ZWZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5NzI0MzQsImV4cCI6MjA1NjU0ODQzNH0.3PcdiGLP6jFpIdUP9mHVVMWfNks96UP_bCZ4kep-PvQ")  # set SUPABASE_KEY env var
 
 if not SUPABASE_KEY:
     raise RuntimeError(

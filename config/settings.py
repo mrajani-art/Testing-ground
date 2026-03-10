@@ -166,3 +166,34 @@ INTERNAL_MAX_WEB_WIDTH      = 12.0    # HP 6900 max web width
 DEFAULT_QTY_TIERS   = [5_000, 10_000, 25_000, 50_000, 100_000]
 DAZPAK_DEFAULT_TIERS= [50_000, 100_000, 250_000, 500_000]
 ROSS_DEFAULT_TIERS  = [5_000, 10_000, 25_000, 50_000, 100_000, 250_000]
+
+# ── Ross Equipment Constants (used by feature_engineering.py) ──────
+# Derived from Ross HP 200K press specs and Gonderflex converting line.
+
+# Converting cost: flat $0.055/pouch base (labour + overhead amortized)
+ROSS_CONVERTING_FLAT_RATE    = 0.055      # $/unit
+
+# Zipper material cost on the Gonderflex line
+ROSS_ZIPPER_COST_MSI         = 5.258772   # $/MSI (same stock as Internal CR zipper)
+ROSS_ZIPPER_WIDTH_IN         = 0.95       # inches of zipper tape per unit
+
+# HP 200K digital press (Ross's large-format digital)
+ROSS_HP200K_CLICK_CMYOVG     = 0.0107     # $/click for CMYOVG colors (×2 per sheet)
+ROSS_HP200K_CLICK_WHITE      = 0.0095     # $/click for white ink (×2 per sheet)
+ROSS_HP200K_PRIMING_MSI      = 0.04       # $/MSI in-line priming
+ROSS_HP200K_SETUP_HRS        = 0.50       # makeready hours per job
+ROSS_HP200K_RATE_PER_HR      = 185.0      # $/hr (larger press, higher rate than HP6900)
+ROSS_HP200K_SPOILAGE_PCT     = 0.04       # 4% flat spoilage
+
+# Gonderflex spoilage table: (max_run_length_ft, spoilage_fraction)
+# Longer runs → lower spoilage percentage
+ROSS_GONDERFLEX_SPOILAGE_TABLE = [
+    (500,    0.08),
+    (1_000,  0.07),
+    (2_500,  0.065),
+    (5_000,  0.06),
+    (10_000, 0.055),
+    (25_000, 0.05),
+    (50_000, 0.045),
+    (999_999_999, 0.04),   # beyond table: minimum spoilage
+]
