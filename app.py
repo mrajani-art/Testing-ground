@@ -26,7 +26,7 @@ from config.settings import (
     MAX_WIDTH_IN, MAX_HEIGHT_IN, MAX_GUSSET_IN,
 )
 from src.utils.vendor_routing import route_vendor, calculate_web_width
-from src.data.supabase_client import get_supabase_client
+from src.data.supabase_client import get_supabase as get_supabase_client
 
 
 # ═══════════════════════════════════════════════════════════════════
