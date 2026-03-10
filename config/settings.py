@@ -142,3 +142,27 @@ MIN_GUSSET_IN = 0.0
 MAX_WIDTH_IN  = 20.0
 MAX_HEIGHT_IN = 24.0
 MAX_GUSSET_IN = 8.0
+
+# ── ML Training Constants ──────────────────────────────────────────
+MODEL_DIR        = "models"
+RANDOM_STATE     = 42
+TEST_SIZE        = 0.15
+CV_FOLDS         = 5
+CONFIDENCE_LOWER = 0.10   # 10th percentile for lower bound
+CONFIDENCE_UPPER = 0.90   # 90th percentile for upper bound
+
+# ── Recency Weighting ──────────────────────────────────────────────
+RECENCY_RECENT_DAYS    = 90    # quotes within this window get full boost
+RECENCY_RECENT_WEIGHT  = 3.0   # 3× weight for recent quotes
+RECENCY_DECAY_HALF_LIFE= 180   # older quotes halve in weight every 180 days
+RECENCY_MIN_WEIGHT     = 0.2   # floor so no quote is fully ignored
+
+# ── Vendor Constants (used by prediction.py) ──────────────────────
+DAZPAK_MIN_ORDER_QTY       = 35_000   # MOQ warning threshold
+ROSS_MIN_PRINT_WIDTH_INCHES = 12.0    # below this → Internal
+INTERNAL_MAX_WEB_WIDTH      = 12.0    # HP 6900 max web width
+
+# ── Default Tier Lists (used by prediction.py) ─────────────────────
+DEFAULT_QTY_TIERS   = [5_000, 10_000, 25_000, 50_000, 100_000]
+DAZPAK_DEFAULT_TIERS= [50_000, 100_000, 250_000, 500_000]
+ROSS_DEFAULT_TIERS  = [5_000, 10_000, 25_000, 50_000, 100_000, 250_000]
